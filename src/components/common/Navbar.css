@@ -1,0 +1,207 @@
+.navbar {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  background-color: rgba(250, 248, 245, 0.94);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  border-bottom: var(--border-hairline);
+  transition: all var(--transition-fast);
+}
+
+.navbar__container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 74px;
+}
+
+/* Brand - Wix-style 'zenith.' logo */
+.navbar__brand {
+  display: flex;
+  align-items: center;
+  gap: 0.65rem;
+  text-decoration: none;
+}
+
+.navbar__brand-symbol {
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  background: var(--color-violet-gradient);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 4px 10px rgba(124, 58, 237, 0.25);
+}
+
+.navbar__symbol-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background-color: #FFFFFF;
+}
+
+.navbar__brand-text {
+  display: flex;
+  align-items: baseline;
+  gap: 0.3rem;
+}
+
+.navbar__brand-name {
+  font-size: 1.45rem;
+  font-weight: 800;
+  color: var(--text-charcoal-title);
+  letter-spacing: -0.04em;
+}
+
+.navbar__brand-dot {
+  color: var(--color-violet-600);
+}
+
+.navbar__brand-region {
+  font-size: 0.75rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--color-violet-700);
+  background-color: var(--color-violet-50);
+  border: 1px solid var(--color-violet-200);
+  padding: 0.1rem 0.45rem;
+  border-radius: var(--radius-full);
+}
+
+/* Navigation Links - Centered & Clean */
+.navbar__nav {
+  display: flex;
+  align-items: center;
+  gap: 2.5rem;
+}
+
+.navbar__links {
+  display: flex;
+  align-items: center;
+  list-style: none;
+  gap: 2.25rem;
+}
+
+.navbar__links a {
+  font-size: 0.9375rem;
+  font-weight: 500;
+  color: var(--text-charcoal-muted);
+  transition: all var(--transition-fast);
+  padding: 0.25rem 0;
+  position: relative;
+}
+
+.navbar__links a:hover,
+.navbar__links a.active {
+  color: var(--text-charcoal-title);
+  font-weight: 600;
+}
+
+.navbar__links a.active::after {
+  content: '';
+  position: absolute;
+  bottom: -4px;
+  left: 0;
+  right: 0;
+  height: 2px;
+  background-color: var(--color-violet-600);
+  border-radius: 2px;
+}
+
+/* Right-aligned Solid Dark Pill Button (Wix Style) */
+.navbar__actions {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.btn-pill-dark {
+  background-color: var(--btn-dark-bg);
+  color: var(--btn-dark-text);
+  border: none;
+  border-radius: var(--radius-full);
+  padding: 0.65rem 1.35rem;
+  font-size: 0.875rem;
+  font-weight: 600;
+  cursor: pointer;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.12);
+  transition: all var(--transition-fast);
+}
+
+.btn-pill-dark:hover {
+  background-color: var(--btn-dark-hover);
+  transform: translateY(-2px);
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.2);
+}
+
+/* Mobile Toggle */
+.navbar__toggle {
+  display: none;
+  flex-direction: column;
+  gap: 5px;
+  padding: 8px;
+  cursor: pointer;
+}
+
+.navbar__toggle-bar {
+  width: 22px;
+  height: 2px;
+  background-color: var(--text-charcoal-heading);
+  border-radius: 2px;
+  transition: all var(--transition-fast);
+}
+
+/* Responsive */
+@media (max-width: 868px) {
+  .navbar__toggle {
+    display: flex;
+  }
+
+  .navbar__nav {
+    position: absolute;
+    top: 74px;
+    left: 0;
+    right: 0;
+    background-color: var(--bg-ivory-surface);
+    border-bottom: 1px solid var(--border-ivory);
+    box-shadow: var(--shadow-lg);
+    flex-direction: column;
+    padding: 1.5rem;
+    gap: 1.25rem;
+    display: none;
+  }
+
+  .navbar__nav--open {
+    display: flex;
+  }
+
+  .navbar__links {
+    flex-direction: column;
+    width: 100%;
+    gap: 1rem;
+    text-align: center;
+  }
+
+  .navbar__links li {
+    width: 100%;
+  }
+
+  .navbar__links a {
+    display: block;
+    padding: 0.5rem 0;
+  }
+
+  .navbar__actions {
+    width: 100%;
+    justify-content: center;
+    padding-top: 0.75rem;
+    border-top: 1px solid var(--border-ivory);
+  }
+
+  .btn-pill-dark {
+    width: 100%;
+  }
+}
